@@ -5,5 +5,5 @@ env_vars:
   #   secret_name: neel-secrets
   #   key: hf-token
   PLACEHOLDER:
-      placeholder_name: neel-secrets
+      secret_name: neel-secrets
       key: hf-token
