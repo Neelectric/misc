@@ -1,4 +1,4 @@
-gpu_limit: 4
+gpu_limit: 3
 gpu_product: NVIDIA-H100-80GB-HBM3
 env_vars:
   HF_TOKEN:
