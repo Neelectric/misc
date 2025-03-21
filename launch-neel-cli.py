@@ -58,8 +58,8 @@ def main():
         # "elasticdump --output=http://localhost:9200 --input=elasticsearch_data.json --limit=100000 && " \
         # "curl localhost:9200/_cat/indices && " \
         # "python -m spacy download en_core_web_sm && " \
-        "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python HF_TOKEN=$HF_TOKEN H4_TOKEN=$HF_TOKEN " \
-        "HF_HUB_DISABLE_PROGRESS_BARS=1 CURL_CA_BUNDLE=\"\" "
+        # "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python HF_TOKEN=$HF_TOKEN H4_TOKEN=$HF_TOKEN " \
+        # "HF_HUB_DISABLE_PROGRESS_BARS=1 CURL_CA_BUNDLE=\"\" "
         command = "&& sleep infinity "
 
         secret_env_vars = configs["env_vars"]
