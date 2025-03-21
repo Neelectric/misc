@@ -1,6 +1,9 @@
 gpu_limit: 4
 gpu_product: NVIDIA-H100-80GB-HBM3
 env_vars:
-  HF_TOKEN:
-    secret_name: neel-secrets
-    key: hf-token
+  # HF_TOKEN:
+  #   secret_name: neel-secrets
+  #   key: hf-token
+  PLACEHOLDER:
+      placeholder_name: neel-secrets
+      key: hf-token
