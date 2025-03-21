@@ -47,9 +47,10 @@ def main():
         "uv init &&" \
         "uv venv &&" \
         "make install &&" \
-        "pip install --root-user-action=ignore -U protobuf && " \
-        "pip install --root-user-action=ignore -U auto-gptq optimum autoawq && " \
-        "pip install datasets && " \
+        # "uv pip install deepspeed &&" \
+        # "pip install --root-user-action=ignore -U protobuf && " \
+        # "pip install --root-user-action=ignore -U auto-gptq optimum autoawq && " \
+        # "pip install datasets && " \
         "curl -LsSf https://astral.sh/uv/install.sh | sh &&" \
         # "wget -O elasticsearch_data.zip https://huggingface.co/datasets/goldilox/ircot_downloaded_datasets/resolve/main/elasticsearch_data.zip?download=true && " \
         # "unzip -o elasticsearch_data.zip -x *.DS_Store && " \
