@@ -38,28 +38,9 @@ def main():
         "npm install elasticdump -g && " \
         "git lfs install && " \
         "pip install -U pip && " \
-        # "git clone https://github.com/mohdsanadzakirizvi/ircot.git && " \
-        # "cd ircot && " \
-        # "pip install --root-user-action=ignore -U -r requirements.txt && " \
-        # "pip install --root-user-action=ignore -U protobuf && " \
-        # "pip install --root-user-action=ignore -U auto-gptq optimum autoawq && " \
         "pip install datasets && " \
-        # "wget -O elasticsearch_data.zip https://huggingface.co/datasets/goldilox/ircot_downloaded_datasets/resolve/main/elasticsearch_data.zip?download=true && " \
-        # "unzip -o elasticsearch_data.zip -x *.DS_Store && " \
-        # "wget -O processed_data.zip https://huggingface.co/datasets/goldilox/ircot_downloaded_datasets/resolve/main/processed_data.zip?download=true && " \
-        # "unzip -o processed_data.zip -x *.DS_Store && " \
-        # "wget -O raw_data.zip https://huggingface.co/datasets/goldilox/ircot_downloaded_datasets/resolve/main/raw_data.zip?download=true && " \
-        # "unzip -o raw_data.zip -x *.DS_Store && " \
-        # "wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.0.0-linux-x86_64.tar.gz -q && " \
-        # "tar -xzf elasticsearch-7.0.0-linux-x86_64.tar.gz && " \
-        # "useradd -m elasticsearchuser && " \
-        # "chown -R elasticsearchuser:elasticsearchuser elasticsearch-7.0.0 && " \
-        # "sudo -u elasticsearchuser elasticsearch-7.0.0/bin/elasticsearch && " \
-        # "elasticdump --output=http://localhost:9200 --input=elasticsearch_data.json --limit=100000 && " \
-        # "curl localhost:9200/_cat/indices && " \
-        # "python -m spacy download en_core_web_sm && " \
-        # "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python HF_TOKEN=$HF_TOKEN H4_TOKEN=$HF_TOKEN " \
-        # "HF_HUB_DISABLE_PROGRESS_BARS=1 CURL_CA_BUNDLE=\"\" "
+        "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python HF_TOKEN=$HF_TOKEN H4_TOKEN=$HF_TOKEN " \
+        "HF_HUB_DISABLE_PROGRESS_BARS=1 CURL_CA_BUNDLE=\"\" "
         command = "&& sleep infinity "
 
         secret_env_vars = configs["env_vars"]
