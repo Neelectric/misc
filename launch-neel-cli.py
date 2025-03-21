@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
@@ -42,10 +41,9 @@ def main():
         # "git clone https://github.com/mohdsanadzakirizvi/ircot.git && " \
         # "cd ircot && " \
         # "pip install --root-user-action=ignore -U -r requirements.txt && " \
-        "pip install --root-user-action=ignore -U protobuf && " \
-        "pip install --root-user-action=ignore -U auto-gptq optimum autoawq && " \
+        # "pip install --root-user-action=ignore -U protobuf && " \
+        # "pip install --root-user-action=ignore -U auto-gptq optimum autoawq && " \
         "pip install datasets && " \
-        "curl -LsSf https://astral.sh/uv/install.sh | sh &&" \
         # "wget -O elasticsearch_data.zip https://huggingface.co/datasets/goldilox/ircot_downloaded_datasets/resolve/main/elasticsearch_data.zip?download=true && " \
         # "unzip -o elasticsearch_data.zip -x *.DS_Store && " \
         # "wget -O processed_data.zip https://huggingface.co/datasets/goldilox/ircot_downloaded_datasets/resolve/main/processed_data.zip?download=true && " \
