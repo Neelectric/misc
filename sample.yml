@@ -1,0 +1,6 @@
+gpu_limit: 1
+gpu_product: NVIDIA-A100-SXM4-80GB
+env_vars:
+  HF_TOKEN:
+    secret_name: sanad-secrets
+    key: hf-token
