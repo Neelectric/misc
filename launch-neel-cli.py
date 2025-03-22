@@ -47,7 +47,7 @@ def main():
 
         # Create a Kubernetes Job with a name, container image, and command
         print(f"Creating job for: {command}")
-        job = KubernetesJob(name=job_name, cpu_request="8", ram_request="80Gi",
+        job = KubernetesJob(name=job_name, cpu_request="8", ram_request="160Gi",
                             image="nvcr.io/nvidia/cuda:12.0.0-cudnn8-devel-ubuntu22.04",
                             gpu_type="nvidia.com/gpu",
                             gpu_limit=configs["gpu_limit"] if args.gpu_limit is None else args.gpu_limit,
