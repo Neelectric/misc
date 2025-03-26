@@ -35,7 +35,11 @@ def main():
         # "sleep $((RANDOM % 300 + 300)) && " \
         base_args = "apt -y update && apt -y upgrade && " \
         "apt-get -y install git-lfs unzip psmisc wget git sudo python3 python-is-python3 pip bc htop nano nodejs npm curl && " \
-        "npm install elasticdump -g && " \
+        "mkdir user && " \
+        "cd user && " \
+        "git clone https://github.com/Neelectric/ModelDiffing.git && " \
+        "git clone https://github.com/Neelectric/open-r1_olmo.git && " \
+        "cd open-r1_olmo && " \
         "git lfs install && " \
         "pip install -U pip && " \
         "pip install datasets && " \
