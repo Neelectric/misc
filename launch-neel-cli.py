@@ -40,6 +40,12 @@ def main():
         "git clone https://github.com/Neelectric/ModelDiffing.git && " \
         "git clone https://github.com/Neelectric/open-r1_olmo.git && " \
         "cd open-r1_olmo && " \
+        "pip install uv && " \
+        "uv venv && " \
+        "source .venv/bin/activate && " \
+        "make install && " \
+        "uv pip install liger-kernel && " \
+        "pip install gpustat && " \
         "git lfs install && " \
         "pip install -U pip && " \
         "pip install datasets && " \
