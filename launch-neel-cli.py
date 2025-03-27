@@ -40,11 +40,7 @@ def main():
         "git clone https://github.com/Neelectric/ModelDiffing.git && " \
         "git clone https://github.com/Neelectric/open-r1_olmo.git && " \
         "cd open-r1_olmo && " \
-        "pip install uv && " \
-        "uv venv && " \
-        "source .venv/bin/activate && " \
-        "make install && " \
-        "uv pip install liger-kernel && " \
+        "wget -qO- https://astral.sh/uv/install.sh | sh && " \
         "pip install gpustat && " \
         "git lfs install && " \
         "pip install -U pip && " \
@@ -57,7 +53,7 @@ def main():
 
         # Create a Kubernetes Job with a name, container image, and command
         print(f"Creating job for: {command}")
-        job = KubernetesJob(name=job_name, cpu_request="8", ram_request="160Gi",
+        job = KubernetesJob(name=job_name, cpu_request="32", ram_request="160Gi",
                             image="nvcr.io/nvidia/cuda:12.0.0-cudnn8-devel-ubuntu22.04",
                             gpu_type="nvidia.com/gpu",
                             gpu_limit=configs["gpu_limit"] if args.gpu_limit is None else args.gpu_limit,
