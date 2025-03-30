@@ -37,15 +37,9 @@ def main():
         "apt-get -y install git-lfs unzip psmisc wget git sudo python3 python-is-python3 pip bc htop nano nodejs npm curl && " \
         "mkdir user && " \
         "cd user && " \
-        "git clone https://github.com/Neelectric/ModelDiffing.git && " \
-        "git clone https://github.com/Neelectric/open-r1_olmo.git && " \
-        "cd open-r1_olmo && " \
-        "wget -qO- https://astral.sh/uv/install.sh | sh && " \
         "pip install gpustat && " \
         "git lfs install && " \
         "pip install -U pip && " \
-        "pip install datasets && " \
-        "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python HF_TOKEN=$HF_TOKEN H4_TOKEN=$HF_TOKEN " \
         "HF_HUB_DISABLE_PROGRESS_BARS=1 CURL_CA_BUNDLE=\"\" "
         command = "&& sleep infinity "
 
@@ -53,7 +47,7 @@ def main():
 
         # Create a Kubernetes Job with a name, container image, and command
         print(f"Creating job for: {command}")
-        job = KubernetesJob(name=job_name, cpu_request="32", ram_request="256Gi",
+        job = KubernetesJob(name=job_name, cpu_request="32", ram_request="225Gi",
                             image="nvcr.io/nvidia/cuda:12.0.0-cudnn8-devel-ubuntu22.04",
                             gpu_type="nvidia.com/gpu",
                             gpu_limit=configs["gpu_limit"] if args.gpu_limit is None else args.gpu_limit,
