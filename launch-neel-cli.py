@@ -16,7 +16,7 @@ from kubejobs.jobs import KubernetesJob
 def argument_parser():
     parser = argparse.ArgumentParser(description="Backend Runner")
     parser.add_argument("config", type=str)
-    parser.add_argument("--job-name", "-n", type=str, default="sanad-backend")
+    parser.add_argument("--job-name", "-n", type=str, default="neel-crosscoder")
     parser.add_argument("--gpu-type", type=str, default=None)
     parser.add_argument("--gpu-limit", type=int, default=None)
     parser.add_argument("--namespace", type=str, default="eidf097ns")
@@ -37,9 +37,10 @@ def main():
         "apt-get -y install git-lfs unzip psmisc wget git sudo python3 python-is-python3 pip bc htop nano nodejs npm curl && " \
         "mkdir user && " \
         "cd user && " \
-        "pip install gpustat && " \
         "git lfs install && " \
         "pip install -U pip && " \
+        "pip install datasets && " \
+        "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python " \
         "HF_HUB_DISABLE_PROGRESS_BARS=1 CURL_CA_BUNDLE=\"\" "
         command = "&& sleep infinity "
 
@@ -47,7 +48,7 @@ def main():
 
         # Create a Kubernetes Job with a name, container image, and command
         print(f"Creating job for: {command}")
-        job = KubernetesJob(name=job_name, cpu_request="32", ram_request="225Gi",
+        job = KubernetesJob(name=job_name, cpu_request="32", ram_request="260Gi",
                             image="nvcr.io/nvidia/cuda:12.0.0-cudnn8-devel-ubuntu22.04",
                             gpu_type="nvidia.com/gpu",
                             gpu_limit=configs["gpu_limit"] if args.gpu_limit is None else args.gpu_limit,
