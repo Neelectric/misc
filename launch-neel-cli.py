@@ -41,7 +41,6 @@ def main():
         "wget -qO- https://astral.sh/uv/install.sh | sh && " \
         "source $HOME/.local/bin/env && " \
         "cd open-r1_olmo && " \
-        "bash setup.bash && " \
         "git lfs install && " \
         "pip install -U pip && " \
         "pip install datasets && " \
