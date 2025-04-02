@@ -35,9 +35,8 @@ def main():
         # "sleep $((RANDOM % 300 + 300)) && " \
         base_args = "apt -y update && apt -y upgrade && " \
         "apt-get -y install git-lfs unzip psmisc wget git sudo python3 python-is-python3 pip bc htop nano nodejs npm curl && " \
-        "mkdir user && " \
-        "cd user && " \
-        "cd home && " \
+        "mkdir -p /home/user && " \
+        "cd /home/user && " \
         "git clone https://github.com/Neelectric/open-r1_olmo.git && " \
         "wget -qO- https://astral.sh/uv/install.sh | sh && " \
         "source $HOME/.local/bin/env && " \
