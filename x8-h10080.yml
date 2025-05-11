@@ -2,5 +2,5 @@ gpu_limit: 8
 gpu_product: NVIDIA-H100-80GB-HBM3
 env_vars:
   HF_TOKEN:
-    secret_name: sanad-secrets
+    secret_name: neel-secrets
     key: hf-token
