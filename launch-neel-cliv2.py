@@ -53,7 +53,7 @@ def argument_parser():
     parser = argparse.ArgumentParser(description="Backend Runner")
     parser.add_argument("config", type=str)
     parser.add_argument("--job-name", "-n", type=str, default="neel-crosscoder")
-    parser.add_argument("--gpu-type", type=str, default=None)
+    parser.add_argument("--gpu-type", type=str, default="NVIDIA-H100-80GB-HBM3")
     parser.add_argument("--gpu-limit", type=int, default=None)
     parser.add_argument("--namespace", type=str, default="eidf097ns")
     args = parser.parse_args()
