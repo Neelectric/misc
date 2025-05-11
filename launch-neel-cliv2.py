@@ -73,6 +73,11 @@ def main():
         "git lfs install && " \
         "pip install -U pip && " \
         "pip install datasets && " \
+        "cd home && " \
+        "git clone https://github.com/Neelectric/open-r1_olmo.git &&" \
+        "cd open-r1_olmo &&" \
+        "bash setup.bash &&" \
+        "pip install gpustat &&" \
         "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python " \
         "HF_HUB_DISABLE_PROGRESS_BARS=1 CURL_CA_BUNDLE=\"\" "
         command = "&& sleep infinity "
