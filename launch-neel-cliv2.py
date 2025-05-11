@@ -59,6 +59,13 @@ def argument_parser():
     args = parser.parse_args()
     return args
 
+# "bash setup.bash &&" \
+# this causes issues like \
+# setup.bash: line 37: .venv/bin/activate: No such file or directory
+# setup.bash: line 40: import: command not found
+# setup.bash: line 41: syntax error near unexpected token `'punkt_tab''
+# setup.bash: line 41: `nltk.download('punkt_tab')'   
+
 def main():
     args = argument_parser()
     configs = yaml.safe_load(open(args.config, "r"))
@@ -76,13 +83,7 @@ def main():
         "mkdir home && " \
         "cd home && " \
         "git clone https://github.com/Neelectric/open-r1_olmo.git &&" \
-        "cd open-r1_olmo &&" \
-        ## "bash setup.bash &&" \
-        ## this causes issues like 
-        ## setup.bash: line 37: .venv/bin/activate: No such file or directory
-        ## setup.bash: line 40: import: command not found
-        ## setup.bash: line 41: syntax error near unexpected token `'punkt_tab''
-        ## setup.bash: line 41: `nltk.download('punkt_tab')'        
+        "cd open-r1_olmo &&" \     
         "pip install gpustat &&" \
         "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python " \
         "HF_HUB_DISABLE_PROGRESS_BARS=1 CURL_CA_BUNDLE=\"\" "
