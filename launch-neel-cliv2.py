@@ -83,7 +83,7 @@ def main():
         "mkdir home && " \
         "cd home && " \
         "git clone https://github.com/Neelectric/open-r1_olmo.git &&" \
-        "cd open-r1_olmo &&" \     
+        "cd open-r1_olmo && " \     
         "pip install gpustat &&" \
         "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python " \
         "HF_HUB_DISABLE_PROGRESS_BARS=1 CURL_CA_BUNDLE=\"\" "
