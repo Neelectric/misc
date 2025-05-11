@@ -77,7 +77,12 @@ def main():
         "cd home && " \
         "git clone https://github.com/Neelectric/open-r1_olmo.git &&" \
         "cd open-r1_olmo &&" \
-        "bash setup.bash &&" \
+        ## "bash setup.bash &&" \
+        ## this causes issues like 
+        ## setup.bash: line 37: .venv/bin/activate: No such file or directory
+        ## setup.bash: line 40: import: command not found
+        ## setup.bash: line 41: syntax error near unexpected token `'punkt_tab''
+        ## setup.bash: line 41: `nltk.download('punkt_tab')'        
         "pip install gpustat &&" \
         "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python " \
         "HF_HUB_DISABLE_PROGRESS_BARS=1 CURL_CA_BUNDLE=\"\" "
