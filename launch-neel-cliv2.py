@@ -73,6 +73,7 @@ def main():
         "git lfs install && " \
         "pip install -U pip && " \
         "pip install datasets && " \
+        "mkdir home && " \
         "cd home && " \
         "git clone https://github.com/Neelectric/open-r1_olmo.git &&" \
         "cd open-r1_olmo &&" \
