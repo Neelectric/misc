@@ -4,3 +4,6 @@ env_vars:
   HF_TOKEN:
     secret_name: neel-secrets
     key: hf-token
+  WANDB_API_KEY:
+    secret_name: neel-secrets
+    key: wandb-token
