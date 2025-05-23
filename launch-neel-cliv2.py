@@ -83,7 +83,7 @@ def main():
         secret_env_vars = configs["env_vars"]
         # Create a Kubernetes Job with a name, container image, and command
         print(f"Creating job for: {command}")
-        job = KubernetesJob(name=job_name, cpu_request="32", ram_request="260Gi",
+        job = KubernetesJob(name=job_name, cpu_request="28", ram_request="260Gi",
                             image="nvcr.io/nvidia/cuda:12.0.0-cudnn8-devel-ubuntu22.04",
                             gpu_type="nvidia.com/gpu",
                             gpu_limit=configs["gpu_limit"] if args.gpu_limit is None else args.gpu_limit,
