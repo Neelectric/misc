@@ -55,6 +55,7 @@ def argument_parser():
     parser.add_argument("--job-name", "-n", type=str, default="neel-crosscoder")
     parser.add_argument("--gpu-type", type=str, default="NVIDIA-H100-80GB-HBM3")
     parser.add_argument("--gpu-limit", type=int, default=None)
+    parser.add_argument("--cpu-limit", type=int, default=32)
     parser.add_argument("--namespace", type=str, default="eidf097ns")
     args = parser.parse_args()
     return args
@@ -64,6 +65,7 @@ def main():
     configs = yaml.safe_load(open(args.config, "r"))
     job_name = args.job_name
     is_completed = utils.check_if_completed(job_name, namespace=args.namespace)
+    cpu_limit = args.cpu_limit
     if is_completed is True:
         # "sleep $((RANDOM % 300 + 300)) && " \
         base_args = "apt -y update && apt -y upgrade && " \
@@ -83,7 +85,7 @@ def main():
         secret_env_vars = configs["env_vars"]
         # Create a Kubernetes Job with a name, container image, and command
         print(f"Creating job for: {command}")
-        job = KubernetesJob(name=job_name, cpu_request="28", ram_request="260Gi",
+        job = KubernetesJob(name=job_name, cpu_request=cpu_limit, ram_request="260Gi",
                             image="nvcr.io/nvidia/cuda:12.0.0-cudnn8-devel-ubuntu22.04",
                             gpu_type="nvidia.com/gpu",
                             gpu_limit=configs["gpu_limit"] if args.gpu_limit is None else args.gpu_limit,
